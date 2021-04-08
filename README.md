@@ -1,6 +1,5 @@
- # azad-wrapper
+ # [azad-wrapper](https://www.npmjs.com/package/azad-wrapper)
  
- [![NPM](https://nodei.co/npm/azad-wrapper.png?stars=true)](https://nodei.co/npm/azad-wrapper/)
  
  # About
 Utility to create wrapper route handler based on the instructions provided. It makes the api call, builds the response and sends it.
@@ -72,6 +71,7 @@ azad_wrapper.set_auth('something');
         path_params: 'path_param',
         query_params: 'query_param',
         required_fields: 'required_fields',
+        request_map: 'request_map',
         response_map: 'response_map',
         transform_response: 'transform_response'      
     });
@@ -149,6 +149,21 @@ azad_wrapper.set_auth('something');
      }
  });
  ```
+ 
+ > **request_map** :- if api request body is different and your wrapper api request body is different. Then use `request_map` to map your request body parameters
+     with the api request body parameters.
+ ```js
+      const handler = azad_wrapper({
+      url: 'http://example.com',
+      method: 'post',
+      request_map: {
+        ur_requestBody_param_one: 'api_requestBody_param_one',
+        ur_requestBody_param_two: 'api_requestBody_param_two',
+      }
+  })
+     ```
+     
+ 
  > **response_map** :- If you want a different response, provide the map object in the response_map. azad-wrapper uses [object-mapper](https://www.npmjs.com/package/object-mapper)
  for mapping the response. So check [object-mapper's documentation](https://www.npmjs.com/package/object-mapper) for a detailed information. You
  can also change the response with the `transform_response` function. Here I am giving a little bit information
@@ -266,7 +281,7 @@ azad_wrapper.set_auth('something');
     app.get('/wrapper', handler);
   ```
   
-     > **error_handler** :- its a middleware which handles the errors.
+   > **error_handler** :- its a middleware which handles the errors.
   ```js
     const { error_handler } = require('object-mapper');
     
