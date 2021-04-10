@@ -1,6 +1,6 @@
 {
   "name": "azad-wrapper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "an esay way to create api wrapper",
   "main": "index.js",
   "scripts": {
