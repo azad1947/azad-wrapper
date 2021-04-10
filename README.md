@@ -256,26 +256,26 @@ azad_wrapper.set_auth('something');
   > **set_base_url** :- it sets the base_url for a set of apis.
   
   ```js
-    const { set_base_url } = require('object-mapper');
+    const { set_base_url } = require('azad-wrapper');
     set_base_url('http://example.com');
   ```
   
   > **set_auth** :- sets auth for a set of apis.
   ```js
-    const { set_auth } = require('object-mapper');
+    const { set_auth } = require('azad-wrapper');
     set_auth('auth');
   ```
   
    > **set_headers** :- sets headers for a set of apis.
   ```js
-    const { set_headers } = require('object-mapper');
+    const { set_headers } = require('azad-wrapper');
     set_headers('auth');
   ```
   
   
    > **wrapper** :- generates the route handler.
   ```js
-    const { wrapper } = require('object-mapper');
+    const { wrapper } = require('azad-wrapper');
     const handler = wrapper('http://example.com');
     
     app.get('/wrapper', handler);
@@ -283,7 +283,7 @@ azad_wrapper.set_auth('something');
   
    > **error_handler** :- its a middleware which handles the errors.
   ```js
-    const { error_handler } = require('object-mapper');
+    const { error_handler } = require('azad-wrapper');
     
     app.use(error_handler('dev'));
   ```
