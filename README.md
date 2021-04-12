@@ -166,7 +166,7 @@ azad_wrapper.set_auth('something');
  
  > **response_map** :- If you want a different response, provide the map object in the response_map. azad-wrapper uses [object-mapper](https://www.npmjs.com/package/object-mapper)
  for mapping the response. So check [object-mapper's documentation](https://www.npmjs.com/package/object-mapper) for a detailed information. You
- can also change the response with the `transform_response` function. Here I am giving a little bit information
+ can also change the response with the **`transform_response`** function. Here I am giving a little bit information
  that how to construct map object.
  ```js
   /*  
